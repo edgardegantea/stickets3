@@ -9,14 +9,16 @@ use App\Models\Area;
 class UsuariosController extends ResourceController
 {
 
-    private $userModel;
+    private $usuario;
+    private $areaModel;
     private $db;
 
     public function __construct()
     {
         helper(['url', 'form', 'session']);
         $this->db = db_connect();
-        $this->userModel = new UserModel;
+        $this->usuario = new UserModel;
+        $this->areaModel = new Area;
         $this->session = \Config\Services::session();
     }
 
@@ -51,8 +53,18 @@ class UsuariosController extends ResourceController
      */
     public function show($id = null)
     {
-        return false;
-        // Pendiente
+        $usuario = $this->userModel->find($id);
+
+        $data = [
+            'usuario'   => $usuario,
+            'title'     => 'Información de usuario'
+        ];
+
+        if ($usuario) {
+            return view('usuarios/show', $data);
+        } else {
+            return redirect()->to('/usuarios');
+        }
     }
 
     /**
@@ -127,23 +139,23 @@ class UsuariosController extends ResourceController
      */
     public function edit($id = null)
     {
-        // $usuario = $this->userModel->find($id);
-        $usuario = $this->userModel->where('id', $id)->first();
+
+        $usuario    = $this->usuario->find($id);
+        $areas      = $this->areaModel->findAll();
+
+        $data = [
+            'usuario'   => $usuario,
+            'areas'     => $areas,
+            'title'     => 'Editar Información del usuario'
+        ];
 
         if ($usuario) {
-            $areas = model('Area');
-
-            $data = [
-                'title'     => 'Editar datos',
-                'areas'     => $areas->findAll(),
-                'usuario'   => $usuario
-            ];
-
             return view('usuarios/edit', $data);
         } else {
             session()->setFlashdata('failed', 'Registro no encontrado');
             return redirect()->to('/admin/usuarios');
         }
+
     }
 
     /**
@@ -154,34 +166,57 @@ class UsuariosController extends ResourceController
     public function update($id = null)
     {
         // helper(['form']);
+        
+        $inputs = $this->request->getPost();
 
+
+        /*
         $inputs = $this->validate([
-            'name'      => 'required|min_length[3]|max_length[80]',
-            'apaterno'  => 'required|min_length[3]|max_length[80]',
-            'amaterno'  => 'required|min_length[3]|max_length[80]',
+            'name'      => 'required|min_length[2]|max_length[80]',
+            'apaterno'  => 'required|min_length[2]|max_length[80]',
+            'amaterno'  => 'required|min_length[2]|max_length[80]',
             'email'     => 'required|min_length[6]|max_length[80]|valid_email|is_unique[users.email]',
             'phone_no'  => 'required|min_length[6]|max_length[20]',
-            // 'password'  => 'required|min_length[6]|max_length[200]',
+            'password'  => 'required|min_length[6]|max_length[200]',
             'role'      => 'required',
             'area'      => 'required'
         ]);
+    */
+
 
         if (!$inputs) {
-            return view('usuarios/edit', [
+
+            return view('usuarios/create', [
+
+                /*
+                $areas = model('Area'),
+                $usuario = model('UserModel'),
+
+                'title'     => 'Información del usuario',
+                'areas'     => $areas->findAll(),
+                */
+
                 'validation' => $this->validator
             ]);
         }
 
+
+        $this->usuario->update($inputs);
+        /*
+
         $this->usuario->save([
-            'name'      => $this->request->getPost('name'),
-            'apaterno'  => $this->request->getPost('apaterno'),
-            'amaterno'  => $this->request->getPost('amaterno'),
-            'email'     => $this->request->getPost('email'),
-            'phone_no'  => $this->request->getPost('phone_no'),
-            // 'password'  => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
-            'role'      => $this->request->getPost('role'),
-            'area'      => $this->request->getPost('area')
+            'id'        => $id,
+            'name'      => $this->request->getVar('name'),
+            'apaterno'  => $this->request->getVar('apaterno'),
+            'amaterno'  => $this->request->getVar('amaterno'),
+            'email'     => $this->request->getVar('email'),
+            'phone_no'  => $this->request->getVar('phone_no'),
+            'password'  => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
+            // 'role'      => $this->request->getVar('role'),
+            // 'area'      => $this->request->getVar('area')
         ]);
+        */
+
         session()->setFlashdata('success', 'Registro actualizado');
         return redirect()->to(base_url('/admin/usuarios'));
 
@@ -194,6 +229,10 @@ class UsuariosController extends ResourceController
      */
     public function delete($id = null)
     {
-        //
+        $this->usuario->delete($id);
+
+        session()->setFlashdata('success', 'Registro borrado de la base de datos');
+
+        return redirect()->to(base_url('/admin/usuarios'));
     }
 }

@@ -36,10 +36,10 @@ class Ticket extends Migration
         ]);
 
         $this->forge->addKey('id', true);
-        $this->forge->addForeignKey('usuario', 'users', 'id');
-        $this->forge->addForeignKey('category', 'categories', 'id');
-        $this->forge->addForeignKey('priority', 'priorities', 'id');
-        $this->forge->addForeignKey('status', 'status', 'id');
+        $this->forge->addForeignKey('usuario', 'users', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('category', 'categories', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('priority', 'priorities', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('status', 'status', 'id', 'CASCADE', 'CASCADE');
         // $this->forge->addForeignKey('area', 'areas', 'id');
         // $this->forge->addForeignKey('evidence', 'evidences', 'id');
         $this->forge->createTable('tickets', true);
