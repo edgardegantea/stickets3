@@ -46,6 +46,7 @@ class UsuariosController extends ResourceController
         return view('usuarios/index', $data);
     }
 
+
     /**
      * Return the properties of a resource object
      *
@@ -67,6 +68,7 @@ class UsuariosController extends ResourceController
         }
     }
 
+
     /**
      * Return a new resource object, with default properties
      *
@@ -83,6 +85,7 @@ class UsuariosController extends ResourceController
 
         return view('usuarios/create', $data);
     }
+
 
     /**
      * Create a new resource object, from "posted" parameters
@@ -132,6 +135,7 @@ class UsuariosController extends ResourceController
 
     }
 
+
     /**
      * Return the editable properties of a resource object
      *
@@ -158,6 +162,7 @@ class UsuariosController extends ResourceController
 
     }
 
+
     /**
      * Add or update a model resource, from "posted" properties
      *
@@ -165,7 +170,7 @@ class UsuariosController extends ResourceController
      */
     public function update($id = null)
     {
-        // helper(['form']);
+        helper(['form']);
         
         $inputs = $this->request->getPost();
 
@@ -221,6 +226,7 @@ class UsuariosController extends ResourceController
         return redirect()->to(base_url('/admin/usuarios'));
 
     }
+
 
     /**
      * Delete the designated resource object from the model

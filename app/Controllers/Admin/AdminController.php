@@ -2,6 +2,7 @@
 
 namespace App\Controllers\Admin;
 
+use App\Models\Ticket;
 use App\Controllers\BaseController;
 
 class AdminController extends BaseController
@@ -14,13 +15,19 @@ class AdminController extends BaseController
         }
     }
     
+
     public function index()
     {
         return view("admin/dashboard");
     }
 
+
     public function perfil() {
-        return view("admin/perfil");
+        $tickets = model('Ticket');
+
+        $totalTickets = $tickets->countAllResults();
+
+        return view("admin/perfil", compact('totalTickets'));
     }
 }
  

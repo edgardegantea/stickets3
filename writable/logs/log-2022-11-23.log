@@ -1,0 +1,60 @@
+CRITICAL - 2022-11-23 09:08:40 --> Undefined property: App\Controllers\Admin\AdminController::$tickets
+in APPPATH\Controllers\Admin\AdminController.php on line 28.
+ 1 APPPATH\Controllers\Admin\AdminController.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Admin\\AdminController::$tickets', 'APPPATH\\Controllers\\Admin\\AdminController.php', 28)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\AdminController->perfil()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-23 09:10:34 --> Undefined property: App\Controllers\Admin\AdminController::$tickets
+in APPPATH\Controllers\Admin\AdminController.php on line 28.
+ 1 APPPATH\Controllers\Admin\AdminController.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Admin\\AdminController::$tickets', 'APPPATH\\Controllers\\Admin\\AdminController.php', 28)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\AdminController->perfil()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-23 09:24:42 --> Undefined property: App\Controllers\Admin\AdminController::$tickets
+in APPPATH\Controllers\Admin\AdminController.php on line 28.
+ 1 APPPATH\Controllers\Admin\AdminController.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Admin\\AdminController::$tickets', 'APPPATH\\Controllers\\Admin\\AdminController.php', 28)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\AdminController->perfil()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AdminController))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-23 09:26:44 --> Undefined variable $totalTikets
+in APPPATH\Views\admin\perfil.php on line 39.
+ 1 APPPATH\Views\admin\perfil.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalTikets', 'APPPATH\\Views\\admin\\perfil.php', 39)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/perfil', [], true)
+ 5 APPPATH\Controllers\Admin\AdminController.php(30): view('admin/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\AdminController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-23 09:46:46 --> Undefined variable $totalTikets
+in APPPATH\Views\admin\perfil.php on line 39.
+ 1 APPPATH\Views\admin\perfil.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalTikets', 'APPPATH\\Views\\admin\\perfil.php', 39)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/perfil', [], true)
+ 5 APPPATH\Controllers\Admin\AdminController.php(30): view('admin/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\AdminController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-23 09:58:43 --> Undefined variable $usuario
+in APPPATH\Views\admin\perfil.php on line 35.
+ 1 APPPATH\Views\admin\perfil.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuario', 'APPPATH\\Views\\admin\\perfil.php', 35)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\perfil.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('admin/perfil', [], true)
+ 5 APPPATH\Controllers\Admin\AdminController.php(30): view('admin/perfil', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Admin\AdminController->perfil()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AdminController))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')

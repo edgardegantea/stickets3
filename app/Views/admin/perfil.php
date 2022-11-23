@@ -8,6 +8,9 @@
                 <div class="card-header">
                     <div class="card-title">
                         <?= session()->get('name') ?>
+                        <?= session()->get('apaterno') ?>
+                        <?= session()->get('amaterno') ?>
+
                     </div>
                     </div>
                     <div class="card-body">
@@ -26,11 +29,24 @@
                         <div class="card-text">
                             Tu correo electrónico: <?= session()->get('email'); ?>
                         </div>
-
                     </div>
 
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary float-right">Editar información</a>
+                    </div>
+            </div>
 
-                
+
+            <div class="card">
+                <div class="card-text">
+                    
+                </div>
+                <div class="card-body">
+                    <div class="card-text">
+                        Usted tiene <?= esc($totalTickets) ?> tickets.
+                        <a href="#" class="btn btn-primary float-right">Ver detalles</a>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
